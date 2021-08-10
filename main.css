@@ -1,0 +1,18 @@
+body{
+    background: #efefef;
+}
+
+.main-container{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-label{
+    font-weight: bold;
+}
+
+.form-check-inline  i {
+    color: #fff;
+}
