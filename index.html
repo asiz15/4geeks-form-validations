@@ -22,16 +22,16 @@
             <form name="checkoutForm" class="row g-3 needs-validation" novalidate>
               <div class="col-md-4">
                 <label for="card" class="form-label">Card</label>
-                <input required maxlength=16 minlength=16 oninput="this.value = this.value.replace(/\D/g,'')" id="card" type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX">
+                <input required maxlength=16 minlength=16 pattern=".{16,16}" oninput="this.value = this.value.replace(/\D/g,'')" id="card" name="card" type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX">
                 <div class="invalid-feedback">
-                  This field is required
+                  This field is required - 16 digits
                 </div>
               </div>
               <div class="col-md-4">
                 <label for="cvc" class="form-label">CVC</label>
-                <input required type="text" class="form-control" type="text" maxlength="3"  oninput="this.value = this.value.replace(/\D/g,'')" id="cvc" placeholder="000">
+                <input required type="text" class="form-control" type="text" maxlength=3 minlength=3 pattern=".{3,3}"  oninput="this.value = this.value.replace(/\D/g,'')" id="cvc" placeholder="000">
                 <div class="invalid-feedback">
-                  This field is required
+                  This field is required - 3 digits
                 </div>
                 
               </div>
