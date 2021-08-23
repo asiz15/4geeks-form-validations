@@ -22,14 +22,14 @@
             <form name="checkoutForm" class="row g-3 needs-validation" novalidate>
               <div class="col-md-4">
                 <label for="card" class="form-label">Card</label>
-                <input required id="card" type="number" class="form-control" placeholder="XXXX XXXX XXXX XXXX">
+                <input required maxlength=16 minlength=16 oninput="this.value = this.value.replace(/\D/g,'')" id="card" type="text" class="form-control" placeholder="XXXX XXXX XXXX XXXX">
                 <div class="invalid-feedback">
                   This field is required
                 </div>
               </div>
               <div class="col-md-4">
                 <label for="cvc" class="form-label">CVC</label>
-                <input required type="text" class="form-control" id="cvc" placeholder="000">
+                <input required type="text" class="form-control" type="text" maxlength="3"  oninput="this.value = this.value.replace(/\D/g,'')" id="cvc" placeholder="000">
                 <div class="invalid-feedback">
                   This field is required
                 </div>
@@ -39,7 +39,7 @@
                 <label for="ammount" class="form-label">Amount</label>
                 <div class="input-group">
                   <span class="input-group-text" id="inputGroupPrepend">$</span>
-                  <input required type="number" class="form-control" id="ammount" aria-describedby="inputGroupPrepend">
+                  <input oninput="this.value = +this.value" min="0" required type="number" class="form-control" id="ammount" aria-describedby="inputGroupPrepend">
                   <div class="invalid-feedback">
                     This field is required
                   </div>
@@ -47,21 +47,21 @@
               </div>
               <div class="col-md-6">
                 <label for="firstName" class="form-label">First Name</label>
-                <input required id="firstName" type="text" class="form-control">
+                <input required id="firstName" type="text" class="form-control" oninput="this.value = this.value.replace(/[0-9]/g, '')">
                 <div class="invalid-feedback">
                   This field is required
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input required id="lastName" type="text" class="form-control">
+                <input required id="lastName" type="text" class="form-control" oninput="this.value = this.value.replace(/[0-9]/g, '')">
                 <div class="invalid-feedback">
                   This field is required
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="city" class="form-label">City</label>
-                <input required id="city" type="text" class="form-control">
+                <input required id="city" type="text" class="form-control" oninput="this.value = this.value.replace(/[0-9]/g, '')">
                 <div class="invalid-feedback">
                   This field is required
                 </div>
@@ -70,7 +70,7 @@
                 <label for="state" class="form-label">State</label>
                 <select required class="form-select" id="state" >
                   <option selected disabled value="">Pick a state</option>
-                  <option>...</option>
+                  <option>Some state</option>
                 </select>
                 <div class="invalid-feedback">
                   This field is required
@@ -78,7 +78,7 @@
               </div>
               <div class="col-md-3">
                 <label for="zipCode" class="form-label">Postal code</label>
-                <input required id="zipCode" type="text" class="form-control"  >
+                <input required id="zipCode" type="text" class="form-control" oninput="this.value = this.value.replace(/\D/g,'')">
                 <div class="invalid-feedback">
                   This field is required
                 </div>
